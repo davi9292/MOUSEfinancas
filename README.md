@@ -1,276 +1,118 @@
-# FinançAI - Plataforma de Educação Financeira
+# 🖱️ MOUSEFinanças - Plataforma de Educação Financeira
 
-Uma plataforma completa de educação financeira desenvolvida em PHP, MySQL e Bootstrap com funcionalidades de gerenciamento de despesas, simulações financeiras e conteúdo educativo.
+Uma plataforma completa de **educação financeira** desenvolvida pelos alunos  
+**Davi de Assis Fabricio** e **Vinicius Queiroz**, utilizando tecnologias modernas.  
 
-## 🚀 Funcionalidades
+Inclui funcionalidades de **gerenciamento de despesas**, **simulações financeiras** e **conteúdo educativo interativo**.  
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" alt="HTML5"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" alt="CSS3"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" alt="JavaScript"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="50" alt="PHP"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="50" alt="MySQL"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="50" alt="Bootstrap"/>
+</p>
+
+---
+
+## 💡 Funcionalidades
 
 ### 💰 Gerenciador de Despesas
-- CRUD completo para despesas por categoria
-- Resumo mensal com gráficos interativos
-- Categorias: Moradia, Alimentação, Transporte, Lazer, Saúde, Educação, Vestuário, Outros
+- CRUD completo para despesas organizadas por categoria  
+- Resumo mensal com gráficos interativos  
+- Categorias: Moradia, Alimentação, Transporte, Lazer, Saúde, Educação, Vestuário, Outros  
 
 ### 🏦 Simulador de Financiamento
-- Sistemas SAC (Amortização Constante) e PRICE (Parcelas Fixas)
-- Tipos: Imobiliário, Veicular, Pessoal
-- Tabela de amortização completa
-- Cálculos matematicamente precisos
+- Sistemas: SAC (Amortização Constante) e PRICE (Parcelas Fixas)  
+- Tipos: Imobiliário, Veicular, Pessoal  
+- Geração de tabela de amortização detalhada  
 
 ### 📈 Simulador de Investimento
-- Cálculos com juros compostos
-- Suporte a valor inicial e aportes mensais
-- Projeção gráfica da evolução
-- Cálculo de rentabilidade
+- Cálculos com juros compostos  
+- Suporte a valor inicial e aportes mensais  
+- Projeção gráfica da evolução do investimento  
 
 ### 📚 Educação Financeira
-- Tópicos educacionais com vídeos
-- Resumos práticos de conceitos financeiros
-- Interface moderna e responsiva
+- Tópicos educacionais com vídeos  
+- Resumos práticos de conceitos financeiros  
+- Interface moderna e responsiva  
 
-## 🛠️ Tecnologias Utilizadas
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+), Bootstrap 5
-- **Backend**: PHP 7.4+
-- **Banco de Dados**: MySQL 5.7+
-- **Gráficos**: Chart.js
-- **Icons**: Bootstrap Icons
+---
 
 ## 📋 Pré-requisitos
+- PHP 7.4 ou superior  
+- MySQL 5.7 ou superior  
+- Servidor Apache ou Nginx  
+- PHPMyAdmin (opcional, recomendado)  
 
-- PHP 7.4 ou superior
-- MySQL 5.7 ou superior
-- Apache ou Nginx
-- PHPMyAdmin (recomendado)
+---
 
 ## 🔧 Instalação
 
 ### 1. Clone/Download do Projeto
 ```bash
-# Faça download dos arquivos para seu servidor web
-# Exemplo: /var/www/html/financai ou C:\xampp\htdocs\financai
-```
+# Exemplo de diretório:
+# Linux/Mac: /var/www/html/mousefinancas
+# Windows (XAMPP): C:\xampp\htdocs\mousefinancas
+2. Configuração do Banco de Dados
+Crie um banco chamado mousefinancas_db
 
-### 2. Configuração do Banco de Dados
+Importe o arquivo /database/schema.sql
 
-#### Via PHPMyAdmin:
-1. Acesse PHPMyAdmin
-2. Crie um novo banco de dados chamado `financai_db`
-3. Importe o arquivo `/database/schema.sql`
+3. Configuração da Conexão
+Edite /config/database.php:
 
-#### Via linha de comando:
-```bash
-mysql -u root -p
-CREATE DATABASE financai_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE financai_db;
-SOURCE /caminho/para/database/schema.sql;
-```
-
-### 3. Configuração da Conexão
-Edite o arquivo `/config/database.php` com suas credenciais:
-
-```php
-private $host = 'localhost';
-private $db_name = 'financai_db';
+php
+Copiar código
+private $db_name = 'mousefinancas_db';
 private $username = 'seu_usuario';
 private $password = 'sua_senha';
-```
+🌐 Acesso
+Homepage: http://localhost/mousefinancas
 
-### 4. Configuração do Servidor Web
+PHPMyAdmin: Para gerenciar o banco
 
-#### Apache (.htaccess já configurado)
-- Certifique-se de que o mod_rewrite está habilitado
-- As regras de reescrita já estão no arquivo `.htaccess`
-
-#### Nginx
-Adicione ao seu arquivo de configuração:
-```nginx
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-
-location ~ ^/api/(expenses|simulations)(.*)$ {
-    try_files $uri $uri/ /api/$1.php$2?$query_string;
-}
-```
-
-### 5. Permissões (Linux/Mac)
-```bash
-chmod 755 financai-php/
-chmod 644 financai-php/*.php
-chmod 644 financai-php/assets/css/*.css
-chmod 644 financai-php/assets/js/*.js
-```
-
-## 🌐 Acesso
-
-Após a instalação, acesse:
-- **Homepage**: `http://localhost/financai` ou `http://seudominio.com`
-- **PHPMyAdmin**: Para gerenciar dados diretamente
-
-## 📱 Uso da Aplicação
-
-### Navegação
-- **Início**: Página principal com visão geral
-- **Despesas**: Gerenciar receitas e despesas
-- **Financiamento**: Simular financiamentos SAC/PRICE
-- **Investimento**: Projetar investimentos com juros compostos
-- **Educação**: Conteúdo educativo sobre finanças
-
-### Gerenciador de Despesas
-1. Clique em "Nova Despesa"
-2. Preencha: nome, categoria, valor e data
-3. Visualize gráficos e resumos automáticos
-4. Edite ou exclua despesas conforme necessário
-
-### Simulador de Financiamento
-1. Escolha o tipo (imobiliário, veicular, pessoal)
-2. Informe: valor, prazo, taxa de juros
-3. Selecione sistema (SAC ou PRICE)
-4. Visualize parcelas e tabela de amortização
-
-### Simulador de Investimento
-1. Informe valor inicial e/ou aportes mensais
-2. Defina taxa de retorno e período
-3. Visualize projeção e gráfico de evolução
-
-## 🔌 API Endpoints
-
-### Despesas
-- `GET /api/expenses` - Listar despesas
-- `POST /api/expenses` - Criar despesa
-- `GET /api/expenses/{id}` - Buscar despesa
-- `PUT /api/expenses/{id}` - Atualizar despesa
-- `DELETE /api/expenses/{id}` - Excluir despesa
-- `GET /api/expenses/summary/{year}/{month}` - Resumo mensal
-
-### Simulações
-- `POST /api/simulations/financing` - Simular financiamento
-- `POST /api/simulations/investment` - Simular investimento
-
-## 🎨 Personalização
-
-### Cores e Tema
-Edite `/assets/css/style.css`:
-```css
-:root {
-    --primary-color: #2563eb;
-    --success-color: #16a34a;
-    --dark-color: #1f2937;
-    /* Suas cores personalizadas */
-}
-```
-
-### Categorias de Despesas
-Edite as opções em:
-- `/index.php` (modal de despesas)
-- `/database/schema.sql` (ENUM no banco)
-
-### Conteúdo Educativo
-Edite a função `loadEducationTopics()` em `/assets/js/app.js`
-
-## 🔒 Segurança
-
-- ✅ Sanitização de inputs
-- ✅ Prepared statements (PDO)
-- ✅ Headers de segurança configurados
-- ✅ Proteção contra XSS
-- ✅ Validação de dados
-
-### Recomendações Adicionais:
-- Use HTTPS em produção
-- Configure backup automático do banco
-- Monitore logs de erro
-- Mantenha PHP e MySQL atualizados
-
-## 🐛 Solução de Problemas
-
-### Erro de Conexão com Banco
-- Verifique credenciais em `/config/database.php`
-- Confirme se MySQL está rodando
-- Teste conexão via PHPMyAdmin
-
-### Erro 500 (Servidor)
-- Verifique logs do Apache/Nginx
-- Confirme permissões dos arquivos
-- Teste sintaxe PHP: `php -l arquivo.php`
-
-### API não funciona
-- Verifique se mod_rewrite está habilitado
-- Teste URLs diretas: `/api/expenses.php`
-- Confirme headers de CORS
-
-### Gráficos não aparecem
-- Verifique conexão com internet (Chart.js via CDN)
-- Teste console do navegador (F12)
-- Confirme dados das APIs
-
-## 📊 Estrutura do Projeto
-
-```
-financai-php/
+📊 Estrutura do Projeto
+pgsql
+Copiar código
+mousefinancas-php/
 ├── api/
-│   ├── expenses.php          # API de despesas
-│   └── simulations.php       # API de simulações
 ├── assets/
 │   ├── css/
-│   │   └── style.css         # Estilos customizados
 │   └── js/
-│       └── app.js            # JavaScript principal
 ├── config/
-│   └── database.php          # Configuração do banco
 ├── database/
-│   └── schema.sql            # Estrutura do banco
 ├── includes/
-│   └── functions.php         # Funções auxiliares
-├── .htaccess                 # Configurações Apache
-├── index.php                 # Página principal
-└── README.md                 # Este arquivo
-```
+├── index.php
+└── README.md
+📈 Próximas Melhorias
+ Autenticação de usuários
 
-## 🎯 Exemplos de Teste
+ Exportação para PDF/Excel
 
-### Financiamento Imobiliário
-- Valor: R$ 300.000
-- Prazo: 360 meses
-- Taxa: 10% a.a.
-- Sistema: PRICE
-- **Resultado**: ~R$ 2.633/mês
+ Dashboard avançado
 
-### Investimento
-- Inicial: R$ 1.000
-- Aporte: R$ 500/mês
-- Taxa: 10% a.a.
-- Prazo: 12 meses
-- **Resultado**: ~R$ 6.840
+ Modo escuro/claro
 
-## 📈 Próximas Melhorias
 
-- [ ] Autenticação de usuários
-- [ ] Múltiplas carteiras de investimento
-- [ ] Exportação para PDF/Excel
-- [ ] Dashboard com métricas avançadas
-- [ ] Integração com APIs de cotações
-- [ ] Notificações e lembretes
-- [ ] Modo escuro/claro
+👨‍💻 Professores SENAI:
+Este projeto foi pedido e orientado pelos professores:
 
-## 🤝 Contribuição
+Luis Felipe Cardozo
 
-1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
+Lucas Machado
 
-## 📄 Licença
+👨‍💻 Autores
+Este projeto foi desenvolvido pelos alunos:
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para detalhes.
+Davi de Assis Fabricio
 
-## 📞 Suporte
+Vinicius Queiroz
 
-Para dúvidas ou problemas:
-- Abra uma issue no GitHub
-- Email: suporte@financai.com.br
-- Documentação: [docs.financai.com.br](https://docs.financai.com.br)
 
----
 
-**FinançAI** - Transformando a educação financeira através da tecnologia 🚀#
