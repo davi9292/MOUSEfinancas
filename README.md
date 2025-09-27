@@ -1,7 +1,7 @@
 # 🖱️ MOUSEFinanças - Plataforma de Educação Financeira
 
-Uma plataforma completa de **educação financeira** desenvolvida pelos alunos  
-**Davi de Assis Fabricio** e **Vinicius Queiroz**, utilizando tecnologias modernas.  
+Uma plataforma completa de **educação financeira** desenvolvida por  
+**Davi de Assis Fabricio** com suporte de **Vinicius Queiroz**, utilizando tecnologias modernas.  
 
 Inclui funcionalidades de **gerenciamento de despesas**, **simulações financeiras** e **conteúdo educativo interativo**.  
 
@@ -113,6 +113,7 @@ Este projeto foi desenvolvido pelos alunos:
 Davi de Assis Fabricio
 
 Vinicius Queiroz
+
 
 
 
